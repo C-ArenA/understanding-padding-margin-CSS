@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayingWithCSS</title>
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body>
+    <div class="block external-block">
+        <div id = 'inblock' class = "block internal-block">
+            <p class = "content">Content</p>   
+            <p id = 'paddingText' class = "paddingText">Padding ↕</p> 
+        </div>
+        <p class = "marginText">Margin ↕</p> 
+    </div>
+
+    <script>
+        const style = getComputedStyle(inblock);
+        let padding = parseInt(style.padding);
+        let margin = parseInt(style.margin);
+        function showPadding() {
+            //alert(style.padding);
+            padding += 1;
+            inblock.style.padding = padding.toString() + "px";
+            //alert(inblock.style.padding);
+        }
+        paddingText.addEventListener("click", showPadding);
+    </script>
+</body>
+</html>
