@@ -7,25 +7,15 @@
     <link rel="stylesheet" href="style.css">    
 </head>
 <body>
+
     <div class="block external-block">
         <div id = 'inblock' class = "block internal-block">
             <p class = "content">Content</p>   
             <p id = 'paddingText' class = "paddingText">Padding ↕</p> 
         </div>
-        <p class = "marginText">Margin ↕</p> 
+        <p id = 'marginText' class = "marginText">Margin ↕</p> 
     </div>
 
-    <script>
-        const style = getComputedStyle(inblock);
-        let padding = parseInt(style.padding);
-        let margin = parseInt(style.margin);
-        function showPadding() {
-            //alert(style.padding);
-            padding += 1;
-            inblock.style.padding = padding.toString() + "px";
-            //alert(inblock.style.padding);
-        }
-        paddingText.addEventListener("click", showPadding);
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
